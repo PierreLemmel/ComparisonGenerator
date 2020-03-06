@@ -1,0 +1,11 @@
+<h1>Consulter les comparaisons</h1>
+
+<p>Liste des comparaisons existantes.</p>
+
+<p *ngIf="!comparisons"><em>Chargement...</em></p>
+
+<ul>
+  <li *ngFor="let comparison of comparisons">
+    {{ comparison.leftHandSide }} c'est comme {{ comparison.rightHandSide }} : {{ comparison.body }}.
+  </li>
+</ul>
