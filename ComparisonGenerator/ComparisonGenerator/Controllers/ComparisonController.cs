@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComparisonGenerator.DataAccess;
 using ComparisonGenerator.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,17 +15,18 @@ namespace ComparisonGenerator.Controllers
     public class ComparisonController : ControllerBase
     {
         private readonly ILogger<ComparisonController> logger;
+        private readonly IRepository<ComparisonModel> repository;
 
-        public ComparisonController(ILogger<ComparisonController> logger)
+        public ComparisonController(ILogger<ComparisonController> logger, IRepository<ComparisonModel> repository)
         {
-            this.logger = logger;
+            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         [HttpGet]
-        public IEnumerable<ComparisonModel> Get()
-        {
-            yield return new ComparisonModel("Les enfants", "les prises électriques", "faut pas mettre les doigts dedans");
-            yield return new ComparisonModel("Les bites", "le fromage", "des fois ça pue");
-        }
+        public async Task<IEnumerable<ComparisonModel>> Get() => await repository.Get();
+
+        [HttpPut("add")]
+        public async Task AddComparison(ComparisonModel comparison) => await repository.Add(comparison);
     }
 }

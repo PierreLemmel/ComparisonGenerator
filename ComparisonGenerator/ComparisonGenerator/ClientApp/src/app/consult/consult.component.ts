@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-consult',
-  templateUrl: './consult.component.html'
+  templateUrl: './consult.component.html',
+  styleUrls: ['./consult.component.css']
 })
 export class ConsultComponent {
   public comparisons: Comparison[];

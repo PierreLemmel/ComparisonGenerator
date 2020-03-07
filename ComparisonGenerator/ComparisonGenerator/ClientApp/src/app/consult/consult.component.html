@@ -4,8 +4,17 @@
 
 <p *ngIf="!comparisons"><em>Chargement...</em></p>
 
-<ul>
-  <li *ngFor="let comparison of comparisons">
-    {{ comparison.leftHandSide }} c'est comme {{ comparison.rightHandSide }} : {{ comparison.body }}.
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Citation</th>
+      <th>Auteur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comparison of comparisons">
+      <td>{{ comparison.leftHandSide }} c'est comme {{ comparison.rightHandSide }} : {{ comparison.body }}.</td>
+      <td>{{ comparison.author }}</td>
+    </tr>
+  </tbody>
+</table>
