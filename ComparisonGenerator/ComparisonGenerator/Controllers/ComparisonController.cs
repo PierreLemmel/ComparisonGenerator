@@ -16,15 +16,20 @@ namespace ComparisonGenerator.Controllers
     {
         private readonly ILogger<ComparisonController> logger;
         private readonly IRepository<ComparisonModel> repository;
+        private readonly IComparandSource comparandSource;
 
-        public ComparisonController(ILogger<ComparisonController> logger, IRepository<ComparisonModel> repository)
+        public ComparisonController(ILogger<ComparisonController> logger, IRepository<ComparisonModel> repository, IComparandSource comparandSource)
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            this.comparandSource = comparandSource ?? throw new ArgumentNullException(nameof(comparandSource));
         }
 
         [HttpGet]
         public async Task<IEnumerable<ComparisonModel>> Get() => await repository.Get();
+
+        [HttpGet("GetComparand")]
+        public async Task<string> GetComparand() => await comparandSource.GetComparand();
 
         [HttpPut("add")]
         public async Task AddComparison(ComparisonModel comparison) => await repository.Add(comparison);
