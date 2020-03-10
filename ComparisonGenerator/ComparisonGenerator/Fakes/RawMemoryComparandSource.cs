@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ComparisonGenerator.DataAccess
+namespace ComparisonGenerator.Infrastructure.DataAccess
 {
     public class RawMemoryComparandSource : IComparandSource
     {

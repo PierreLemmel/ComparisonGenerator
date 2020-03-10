@@ -1,7 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -10,42 +9,44 @@ import { throwError } from 'rxjs';
 })
 export class CreateComponent {
 
-  compForm;
+  comparison: ComparisonCreateModel = new ComparisonCreateModel();
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-    this.compForm = this.formBuilder.group({
-      leftHandSide: new FormControl(),
-      rightHandSide: new FormControl(),
-      body: new FormControl(),
-      author: new FormControl(),
-    });
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    this.reset();
   }
 
-  onSubmit(data) {
-
-    if (this.compForm.invalid) {
-      return;
-    }
-
+  onSubmit(form: NgForm) {
     console.log('submit');
-    console.log(data);
+    console.log(this.comparison);
 
     this.http
-      .put(this.baseUrl + 'comparison/add', data)
+      .put(this.baseUrl + 'comparison/add', this.comparison)
       .subscribe(
-        (res) => console.log(res),
+        (res) => this.reset(),
         (err) => console.error(err)
       );
+
+    alert("Comparaison ajoutée !");
+    form.controls['body'].reset();
   }
 
   onResetClicked() {
     console.log('reset');
-
-    this.compForm.get('body').reset();
+    this.reset();
   }
 
-  get lhs() { return this.compForm.get('leftHandSide'); }
-  get rhs() { return this.compForm.get('rightHandSide'); }
-  get body() { return this.compForm.get('body'); }
-  get author() { return this.compForm.get('author'); }
+  private reset() {
+    this.comparison.body = '';
+  }
+
+  get formValid() { return this.comparison.author && this.comparison.body }
+}
+
+export class ComparisonCreateModel {
+  constructor(
+    public leftHandSide: string = '',
+    public rightHandSide: string = '',
+    public body: string = '',
+    public author: string = '',
+  ) {}
 }

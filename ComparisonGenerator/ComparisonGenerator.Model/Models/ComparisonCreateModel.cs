@@ -2,7 +2,7 @@
 
 namespace ComparisonGenerator.Models
 {
-    public class ComparisonModel
+    public class ComparisonCreateModel
     {
         public string LeftHandSide { get; set; }
         public string RightHandSide { get; set; }

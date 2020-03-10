@@ -1,4 +1,4 @@
-using ComparisonGenerator.DataAccess;
+using ComparisonGenerator.Infrastructure.DataAccess;
 using ComparisonGenerator.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +30,7 @@ namespace ComparisonGenerator
             });
 
             services.AddSingleton<IComparandSource, RawMemoryComparandSource>();
-            services.AddSingleton<IRepository<ComparisonModel>, RawComparisonRepository>();
+            services.AddSingleton<IRepository<ComparisonReadModel>, RawComparisonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

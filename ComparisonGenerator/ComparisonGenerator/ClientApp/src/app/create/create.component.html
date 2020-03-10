@@ -1,24 +1,22 @@
 <h1>Créer une nouvelle comparaison</h1>
 
-<form [formGroup]="compForm" (ngSubmit)="onSubmit(compForm.value)" class="comparison-form">
+<form (ngSubmit)="onSubmit(compForm)" class="comparison-form" #compForm="ngForm">
 
   <label>Comparaison</label>
   <div class="comparison-form-block">
-    <input id="lhs" type="text" formControlName="leftHandSide" class="comparison-short-label" required minlength="4" maxlength="30"> c'est comme
-    <input id="rhs" type="text" formControlName="rightHandSide" class="comparison-short-input" required minlength="4" maxlength="30"> :
+    <input id="lhs" [(ngModel)]="comparison.leftHandSide" name="lhs" type="text" class="comparison-short-label"> c'est comme
+    <input id="rhs" [(ngModel)]="comparison.rightHandSide" name="rhs" type="text" class="comparison-short-input"> :
     <br />
-    <textarea formControlName="body" class="comparison-large-input" required minlength="4"></textarea>
+    <textarea [(ngModel)]="comparison.body" name="body" #body="ngModel" class="comparison-large-input" required minlength="4"></textarea>
 
-    <div *ngIf="lhs.invalid && lhs.touched" class="alert">Le partie de gauche doit être renseignée</div>
-    <div *ngIf="rhs.invalid && rhs.touched" class="alert">Le partie de droite doit être renseignée</div>
-    <div *ngIf="body.invalid && body.touched" class="alert">Le corps doit être renseigné</div>
+    <div [hidden]="body.valid || body.pristine" class="alert">Le corps doit être renseigné</div>
   </div>
 
   <label for="author">Auteur</label>
   <div class="comparison-form-block">
-    <input id="author" type="text" formControlName="author" class="comparison-short-input" required minlength="4" maxlength="30">
+    <input id="author" type="text" [(ngModel)]="comparison.author" name="author" #author="ngModel" class="comparison-short-input" required minlength="4" maxlength="30">
 
-    <div *ngIf="author.invalid && author.touched" class="alert">L'auteur doit être renseigné</div>
+    <div [hidden]="author.valid || author.pristine" class="alert">L'auteur doit être renseigné</div>
   </div>
 
   <div class="comparison-form-block">

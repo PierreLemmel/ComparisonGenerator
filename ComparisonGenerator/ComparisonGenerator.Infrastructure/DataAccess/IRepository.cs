@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ComparisonGenerator.DataAccess
+namespace ComparisonGenerator.Infrastructure.DataAccess
 {
     public interface IRepository<TModel>
     {

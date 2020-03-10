@@ -27,6 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ComparisonGenerator.Infrastructure\ComparisonGenerator.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="ClientApp\src\app\consult\consult.component.ts">
       <SubType>Code</SubType>
     </None>

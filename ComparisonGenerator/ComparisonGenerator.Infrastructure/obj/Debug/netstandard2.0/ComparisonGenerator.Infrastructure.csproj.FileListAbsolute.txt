@@ -1,0 +1,5 @@
+C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.deps.json
+C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.dll
+C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.csprojAssemblyReference.cache
+C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.AssemblyInfoInputs.cache
+C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.AssemblyInfo.cs

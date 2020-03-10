@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace ComparisonGenerator.DataAccess
+namespace ComparisonGenerator.Infrastructure.DataAccess
 {
     public interface IComparandSource
     {

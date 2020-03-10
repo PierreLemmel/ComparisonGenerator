@@ -7,17 +7,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./consult.component.css']
 })
 export class ConsultComponent {
-  public comparisons: Comparison[];
+  public comparisons: ComparisonReadModel[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Comparison[]>(baseUrl + 'comparison').subscribe(result => {
+    http.get<ComparisonReadModel[]>(baseUrl + 'comparison').subscribe(result => {
       this.comparisons = result;
     }, error => console.error(error));
   }
 }
 
-interface Comparison {
-  leftHandSide: string,
-  rightHandSide: string,
-  body: string
+export class ComparisonReadModel {
+  constructor(
+    public id: string,
+    public content: string,
+    public author: string)
+  { }
 }
