@@ -6,6 +6,6 @@ namespace ComparisonGenerator.Infrastructure.DataAccess
     public interface IRepository<TModel>
     {
         Task Add(TModel elt);
-        Task<IEnumerable<TModel>> Get();
+        Task<IReadOnlyCollection<TModel>> Get();
     }
 }

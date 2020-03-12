@@ -17,3 +17,15 @@
   margin-bottom: 0.7em;
   margin-top: 0.2em;
 }
+
+button.refresh-button {
+  background-image: url('../../assets/icons/refresh.png');
+  background-color: white;
+  background-size: 100%;
+  width: 25px;
+  height: 25px;
+}
+
+button.refresh-button:active {
+  border-style: outset;
+}

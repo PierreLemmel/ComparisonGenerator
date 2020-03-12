@@ -4,8 +4,11 @@
 
   <label>Comparaison</label>
   <div class="comparison-form-block">
-    <input id="lhs" [(ngModel)]="comparison.leftHandSide" name="lhs" type="text" class="comparison-short-label"> c'est comme
-    <input id="rhs" [(ngModel)]="comparison.rightHandSide" name="rhs" type="text" class="comparison-short-input"> :
+    <input id="lhs" [(ngModel)]="comparison.leftHandSide" name="lhs" type="text" class="comparison-short-label" readonly>
+    <button id="lhsRefresh" class="refresh-button" type="button" (click)="onLhsRefresh()"></button>
+    c'est comme
+    <input id="rhs" [(ngModel)]="comparison.rightHandSide" name="rhs" type="text" class="comparison-short-input" readonly>
+    <button id="rhsRefresh" class="refresh-button" type="button" (click)="onRhsRefresh()"></button> :
     <br />
     <textarea [(ngModel)]="comparison.body" name="body" #body="ngModel" class="comparison-large-input" required minlength="4"></textarea>
 
@@ -21,6 +24,6 @@
 
   <div class="comparison-form-block">
     <button class="btn-primary" type="submit" [disabled]="!compForm.valid">Ajouter</button>
-    <button class="btn-primary" (click)="onResetClicked()">Réinitialiser</button>
+    <button class="btn-primary" type="button" (click)="onResetClicked()">Réinitialiser</button>
   </div>
 </form>

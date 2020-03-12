@@ -19,6 +19,10 @@ export class CreateComponent {
     console.log('submit');
     console.log(this.comparison);
 
+    if (!form.valid) {
+      return;
+    }
+
     this.http
       .put(this.baseUrl + 'comparison/add', this.comparison)
       .subscribe(
@@ -33,6 +37,14 @@ export class CreateComponent {
   onResetClicked() {
     console.log('reset');
     this.reset();
+  }
+
+  onLhsRefresh() {
+    console.log('LHS refresh');
+  }
+
+  onRhsRefresh() {
+    console.log('RHS refresh');
   }
 
   private reset() {

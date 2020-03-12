@@ -4,17 +4,19 @@
 
 <p *ngIf="!comparisons"><em>Chargement...</em></p>
 
-<table>
+<table *ngIf="comparisons">
   <thead>
     <tr>
       <th>Citation</th>
       <th>Auteur</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let comparison of comparisons">
       <td>{{ comparison.content }}</td>
       <td>{{ comparison.author }}</td>
+      <td>{{ comparison.date | date : "dd MMMM yyyy à  HH:mm" : "fr-fr" }}</td>
     </tr>
   </tbody>
 </table>

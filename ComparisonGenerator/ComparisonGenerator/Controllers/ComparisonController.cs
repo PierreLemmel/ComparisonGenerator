@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using ComparisonGenerator.DataAccess;
+using ComparisonGenerator.Infrastructure.DataAccess;
 using ComparisonGenerator.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -34,7 +32,6 @@ namespace ComparisonGenerator.Controllers
         [HttpPut("add")]
         public async Task AddComparison(ComparisonCreateModel comparison) => await repository.Add(new ComparisonReadModel
         {
-            Id = Guid.NewGuid(),
             Content = $"{comparison.LeftHandSide} c'est comme {comparison.RightHandSide} : {comparison.Body}",
             Author = comparison.Author
         });
