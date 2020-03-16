@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ComparisonGenerator.Infrastructure.Events
 {
     public interface IEventStore
     {
-        Task HandleEvent<TEvent>(TEvent evt);
+        void RegisterHandler<TEvent>(IEventHandler<TEvent> handler) where TEvent : IEvent;
+        Task HandleEvent<TEvent>(TEvent evt) where TEvent : IEvent;
     }
 }

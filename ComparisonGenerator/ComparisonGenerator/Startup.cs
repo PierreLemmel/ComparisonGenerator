@@ -1,4 +1,7 @@
 using ComparisonGenerator.Infrastructure.DataAccess;
+using ComparisonGenerator.Infrastructure.Events;
+using ComparisonGenerator.Logic.Events;
+using ComparisonGenerator.Logic.Handlers;
 using ComparisonGenerator.Models;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
@@ -26,7 +29,7 @@ namespace ComparisonGenerator
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
@@ -48,6 +51,17 @@ namespace ComparisonGenerator
                 FirestoreDb db = FirestoreDb.Create("comparisongenerator", client);
 
                 return db;
+            });
+
+            services.AddSingleton<ComparisonHandler>();
+
+            services.AddSingleton<IEventStore, EventStore>(sp =>
+            {
+                var store = new EventStore(sp.GetService<IRepository<Event>>());
+
+                store.RegisterHandler<ComparisonAdded>(sp.GetService<ComparisonHandler>());
+
+                return store;
             });
 
             services.AddSingleton<IComparandSource, RawMemoryComparandSource>();

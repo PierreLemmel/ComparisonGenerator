@@ -6,3 +6,11 @@ C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infr
 C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.pdb
 C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.dll
 C:\Repositories\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.deps.json
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.csprojAssemblyReference.cache
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.AssemblyInfoInputs.cache
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.AssemblyInfo.cs
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Infrastructure\obj\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.pdb
