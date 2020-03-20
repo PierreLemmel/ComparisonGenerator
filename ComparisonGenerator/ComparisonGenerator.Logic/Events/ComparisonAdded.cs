@@ -1,15 +1,21 @@
 ﻿using ComparisonGenerator.Infrastructure.Events;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ComparisonGenerator.Logic.Events
 {
     public class ComparisonAdded : IEvent
     {
-        public string LeftPart { get; set; }
-        public string RightPart { get; set; }
-        public string Body { get; set; }
-        public string Author { get; set; }
+        public ComparisonAdded(string leftPart, string rightPart, string body, string author)
+        {
+            LeftPart = leftPart ?? throw new ArgumentNullException(nameof(leftPart));
+            RightPart = rightPart ?? throw new ArgumentNullException(nameof(rightPart));
+            Body = body ?? throw new ArgumentNullException(nameof(body));
+            Author = author ?? throw new ArgumentNullException(nameof(author));
+        }
+
+        public string LeftPart { get; }
+        public string RightPart { get; }
+        public string Body { get; }
+        public string Author { get; }
     }
 }

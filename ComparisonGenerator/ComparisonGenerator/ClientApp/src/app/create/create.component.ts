@@ -39,14 +39,6 @@ export class CreateComponent {
     this.reset();
   }
 
-  onLhsRefresh() {
-    console.log('LHS refresh');
-  }
-
-  onRhsRefresh() {
-    console.log('RHS refresh');
-  }
-
   private reset() {
     this.comparison.body = '';
   }

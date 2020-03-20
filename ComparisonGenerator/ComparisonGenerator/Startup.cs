@@ -1,5 +1,6 @@
 using ComparisonGenerator.Infrastructure.DataAccess;
 using ComparisonGenerator.Infrastructure.Events;
+using ComparisonGenerator.Logic;
 using ComparisonGenerator.Logic.Events;
 using ComparisonGenerator.Logic.Handlers;
 using ComparisonGenerator.Models;
@@ -16,7 +17,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using ComparisonGenerator.Core.Reflection;
+using FluentValidation;
 
 namespace ComparisonGenerator
 {
@@ -33,7 +39,7 @@ namespace ComparisonGenerator
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
@@ -41,7 +47,7 @@ namespace ComparisonGenerator
 
             services.AddSingleton<FirestoreDb>(sp =>
             {
-                string credentialsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "comparisongenerator-e2b8c7b24f8e.json");
+                string credentialsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "comparisongenerator-6b32a2eee55a.json");
 
                 GoogleCredential cred = GoogleCredential.FromFile(credentialsPath);
                 Channel channel = new Channel(FirestoreClient.DefaultEndpoint.Host,
@@ -53,21 +59,58 @@ namespace ComparisonGenerator
                 return db;
             });
 
-            services.AddSingleton<ComparisonHandler>();
+            SetupEventStore(services);
+            SetupValidators(services);
 
-            services.AddSingleton<IEventStore, EventStore>(sp =>
-            {
-                var store = new EventStore(sp.GetService<IRepository<Event>>());
-
-                store.RegisterHandler<ComparisonAdded>(sp.GetService<ComparisonHandler>());
-
-                return store;
-            });
-
-            services.AddSingleton<IComparandSource, RawMemoryComparandSource>();
             services.AddSingleton(typeof(IRepository<>), typeof(FirestoreRepository<>));
         }
 
+        private void SetupEventStore(IServiceCollection services)
+        {
+            Assembly eventAssembly = Assembly.GetAssembly(typeof(EventBase));
+
+            IEnumerable<(Type EventType, Type HandlerType)> eventTypes = eventAssembly
+                .GetTypes()
+                .Where(t => t.IsClass && !t.IsAbstract)
+                .Where(t => t.ImplementsOpenGenericInterface(typeof(IEventHandler<>)))
+                .Select(t => (EventType: t.GetTypeImplementingOpenGenericInterface(typeof(IEventHandler<>)), HandlerType: t));
+
+            services.AddSingleton<ComparisonHandler>();
+
+            MethodInfo registerHandlerGenericMethod = typeof(IEventStore).GetMethod(nameof(IEventStore.RegisterHandler));
+
+            services.AddSingleton<IEventStore>(sp =>
+            {
+                IEventStore store = new EventStore(sp.GetService<IRepository<Event>>());
+
+                foreach((Type EventType, Type HandlerType) in eventTypes)
+                {
+                    MethodInfo method = registerHandlerGenericMethod.MakeGenericMethod(EventType);
+
+                    object handler = sp.GetService(HandlerType);
+                    method.Invoke(store, new[] { handler });
+                }
+
+                return store;
+            });
+        }
+
+        private void SetupValidators(IServiceCollection services)
+        {
+            Assembly validatorsAssembly = GetType().Assembly;
+
+            IEnumerable<(Type ModelType, Type ValidatorType)> validatorTypes = validatorsAssembly
+                .GetTypes()
+                .Where(t => t.IsClass && !t.IsAbstract)
+                .Where(t => t.ImplementsOpenGenericInterface(typeof(IValidator<>)))
+                .Select(t => (ModelType: t.GetTypeImplementingOpenGenericInterface(typeof(IValidator<>)), ValidatorType: t));
+
+            foreach ((Type ModelType, Type ValidatorType) in validatorTypes)
+            {
+                Type interfaceType = typeof(IValidator<>).MakeGenericType(ModelType);
+                services.AddSingleton(interfaceType, ValidatorType);
+            }
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

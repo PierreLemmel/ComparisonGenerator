@@ -1,0 +1,8 @@
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\bin\Debug\netstandard2.0\ComparisonGenerator.Core.deps.json
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\bin\Debug\netstandard2.0\ComparisonGenerator.Core.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\bin\Debug\netstandard2.0\ComparisonGenerator.Core.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\obj\Debug\netstandard2.0\ComparisonGenerator.Core.AssemblyInfoInputs.cache
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\obj\Debug\netstandard2.0\ComparisonGenerator.Core.AssemblyInfo.cs
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\obj\Debug\netstandard2.0\ComparisonGenerator.Core.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\obj\Debug\netstandard2.0\ComparisonGenerator.Core.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Core\obj\Debug\netstandard2.0\ComparisonGenerator.Core.csprojAssemblyReference.cache

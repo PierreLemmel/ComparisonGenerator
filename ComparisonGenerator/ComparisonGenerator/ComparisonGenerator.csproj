@@ -15,6 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="System.Text.Json" Version="4.7.1" />
@@ -28,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ComparisonGenerator.Core\ComparisonGenerator.Core.csproj" />
     <ProjectReference Include="..\ComparisonGenerator.Infrastructure\ComparisonGenerator.Infrastructure.csproj" />
     <ProjectReference Include="..\ComparisonGenerator.Logic\ComparisonGenerator.Logic.csproj" />
   </ItemGroup>

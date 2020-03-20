@@ -1,0 +1,11 @@
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\bin\Debug\netstandard2.0\ComparisonGenerator.Logic.deps.json
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\bin\Debug\netstandard2.0\ComparisonGenerator.Logic.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\bin\Debug\netstandard2.0\ComparisonGenerator.Logic.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\bin\Debug\netstandard2.0\ComparisonGenerator.Infrastructure.pdb
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.csprojAssemblyReference.cache
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.AssemblyInfoInputs.cache
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.AssemblyInfo.cs
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.csproj.CopyComplete
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.dll
+I:\Mes projets\GitHub\ComparisonGenerator\ComparisonGenerator\ComparisonGenerator.Logic\obj\Debug\netstandard2.0\ComparisonGenerator.Logic.pdb

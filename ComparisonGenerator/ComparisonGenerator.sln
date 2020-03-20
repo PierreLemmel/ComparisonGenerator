@@ -7,13 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator", "Comp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator.Infrastructure", "ComparisonGenerator.Infrastructure\ComparisonGenerator.Infrastructure.csproj", "{61DBFD89-D2E8-4010-8116-E25B20B3C813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Logic", "ComparisonGenerator.Logic\ComparisonGenerator.Logic.csproj", "{469EBD36-6756-4A23-A82E-1C5BD5FD8843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator.Logic", "ComparisonGenerator.Logic\ComparisonGenerator.Logic.csproj", "{469EBD36-6756-4A23-A82E-1C5BD5FD8843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Test", "ComparisonGenerator.Test\ComparisonGenerator.Test.csproj", "{84BCECB8-3602-4D65-AAC2-8A427D21EEC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator.Test", "ComparisonGenerator.Test\ComparisonGenerator.Test.csproj", "{84BCECB8-3602-4D65-AAC2-8A427D21EEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Logic.Test", "ComparisonGenerator.Logic.Test\ComparisonGenerator.Logic.Test.csproj", "{4FF73E70-F6D1-4440-A5CB-DC423DA250B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator.Logic.Test", "ComparisonGenerator.Logic.Test\ComparisonGenerator.Logic.Test.csproj", "{4FF73E70-F6D1-4440-A5CB-DC423DA250B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Infrastructure.Test", "ComparisonGenerator.Infrastructure.Test\ComparisonGenerator.Infrastructure.Test.csproj", "{9AF89289-CEEC-4755-97CA-0D996BC63812}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonGenerator.Infrastructure.Test", "ComparisonGenerator.Infrastructure.Test\ComparisonGenerator.Infrastructure.Test.csproj", "{9AF89289-CEEC-4755-97CA-0D996BC63812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Core", "ComparisonGenerator.Core\ComparisonGenerator.Core.csproj", "{F38A2ACF-7B5E-46B8-A58A-473281CAC13F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonGenerator.Core.Tests", "ComparisonGenerator.Core.Tests\ComparisonGenerator.Core.Tests.csproj", "{C45D9F44-D0CD-4F3C-BC7B-A554A353EFF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{9AF89289-CEEC-4755-97CA-0D996BC63812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AF89289-CEEC-4755-97CA-0D996BC63812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AF89289-CEEC-4755-97CA-0D996BC63812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38A2ACF-7B5E-46B8-A58A-473281CAC13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38A2ACF-7B5E-46B8-A58A-473281CAC13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38A2ACF-7B5E-46B8-A58A-473281CAC13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38A2ACF-7B5E-46B8-A58A-473281CAC13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45D9F44-D0CD-4F3C-BC7B-A554A353EFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45D9F44-D0CD-4F3C-BC7B-A554A353EFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45D9F44-D0CD-4F3C-BC7B-A554A353EFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45D9F44-D0CD-4F3C-BC7B-A554A353EFF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,6 +29,7 @@ namespace ComparisonGenerator.Infrastructure.Events
             else
             {
                 typedHandlers = new List<Func<IEvent, Task>>();
+                handlers[evtType] = typedHandlers;
             }
 
             typedHandlers.Add(f => handler.HandleEvent((TEvent)f));
